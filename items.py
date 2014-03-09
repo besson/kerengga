@@ -10,3 +10,11 @@ class Product(Item):
     name = Field(serializer=encode)
     ean = Field()
     price = Field()
+    player_id = Field()
+    category_id = Field()
+
+class Category(Item):
+    url = Field()
+    description = Field()
+    parent_id = Field()
+    player_id = Field()

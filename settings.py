@@ -13,3 +13,5 @@ NEWSPIDER_MODULE = 'kerengga.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'kerengga (+http://www.yourdomain.com)'
+
+ITEM_PIPELINES = ['kerengga.pipelines.MysqlStorePipeline']

@@ -1,6 +1,6 @@
  #!/usr/bin/env python
 
-from scrapy.contrib.spiders import CrawlSpider, Rule
+from scrapy.contrib.spiders import CrawlSpider
 from scrapy.selector import Selector
 from scrapy.http import Request
 from kerengga.items import Product
@@ -8,7 +8,10 @@ from kerengga.items import Product
 class GPAProductSpider(CrawlSpider):
     name = "gpa_product"
     allowed_domains = ["pontofrio.com.br", "casabahia.com.br"]
-    start_urls = ['http://www.pontofrio.com.br/tablets/Tablet/TabletAndroid/?Filtro=C2031_C2032_C2034&paginaAtual=1&numPorPagina=20']
+
+    def __init__(self, category=None, *args, **kwargs):
+        super(GPAProductSpider, self).__init__(*args, **kwargs)
+        self.start_urls = [url]
 
     def parse(self, response):
         sel = Selector(response)
