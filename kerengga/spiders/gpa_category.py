@@ -3,6 +3,8 @@
 from scrapy.contrib.spiders import CrawlSpider
 from scrapy.selector import Selector
 from kerengga.items import Category
+from kerengga.items import Product
+
 
 class GPACategorySpider(CrawlSpider):
     name = "gpa_category"

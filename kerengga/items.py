@@ -2,12 +2,9 @@
 
 from scrapy.item import Item, Field
 
-def encode(value):
-  return value.encode('utf-8')
-
 class Product(Item):
     url = Field()
-    name = Field(serializer=encode)
+    name = Field()
     ean = Field()
     price = Field()
     player_id = Field()
